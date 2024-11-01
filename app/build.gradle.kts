@@ -59,9 +59,8 @@ android {
             )
         }
         getByName("release") {
-            manifestPlaceholders += mapOf(
-                "appProvider" to "com.dot.gallery.media_provider"
-            )
+            manifestPlaceholders += mapOf("appProvider" to "com.dot.staging.debug.media_provider")
+            manifestPlaceholders += mapOf("appProvider" to "com.dot.staging.debug.media_provider")
             isMinifyEnabled = true
             isShrinkResources = true
             setProguardFiles(
@@ -81,7 +80,6 @@ android {
             isShrinkResources = false
             applicationIdSuffix = ".staging"
             versionNameSuffix = "-staging"
-            manifestPlaceholders["appProvider"] = "com.dot.staging.debug.media_provider"
             buildConfigField(
                 "String",
                 "CONTENT_AUTHORITY",
